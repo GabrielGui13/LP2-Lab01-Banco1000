@@ -12,8 +12,16 @@ public class Main {
             System.out.println("1 - Abrir Conta");
             System.out.println("2 - Acessar Conta");
             System.out.println("0 - Sair");
-            int opcao = scanner.nextInt();
-            scanner.nextLine();
+
+            int opcao;
+
+            if (scanner.hasNextInt()) {
+                opcao = scanner.nextInt();
+                scanner.nextLine(); // Limpa o buffer após ler o número
+            } else {
+                scanner.nextLine(); // Limpa o buffer de entrada inválida
+                opcao = -1; // Define uma opção inválida para cair no `default` do switch
+            }
 
             switch (opcao) {
                 case 1:

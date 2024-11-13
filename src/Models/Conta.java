@@ -4,7 +4,6 @@ import Models.Cliente;
 import Models.Movimentacao;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Conta {
     private int numero;
@@ -13,7 +12,7 @@ public class Conta {
     private double saldo;
     private boolean ativa;
     private String senha;
-    private List<Movimentacao> extrato = new ArrayList<>();
+    private ArrayList<Movimentacao> extrato = new ArrayList<>();
 
     public Conta(int numero, String tipo, Cliente cliente, String senha) {
         this.numero = numero;
