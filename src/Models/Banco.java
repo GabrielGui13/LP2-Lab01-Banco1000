@@ -9,6 +9,10 @@ public class Banco {
 
     public void criarConta(Scanner scanner) {
         System.out.println("Digite seu nome:");
+        if (scanner.hasNextInt()) {
+            System.out.println("O nome não deve ser um número!");
+            return;
+        }
         String nome = scanner.nextLine();
 
         System.out.println("Escolha o tipo de conta: (CC - Conta Corrente, CP - Conta Poupança)");
@@ -19,7 +23,10 @@ public class Banco {
             return;
         }
 
-        System.out.println("Crie uma senha de 4 dígitos:");
+        System.out.println("Crie uma senha de 4 dígitos numerais:");
+        if (!scanner.hasNextInt()) {
+            System.out.println("A senha deve ser um número!");
+        }
         String senha = scanner.nextLine();
 
         if (senha.length() != 4) {
@@ -35,11 +42,18 @@ public class Banco {
     }
 
     public void acessarConta(Scanner scanner) {
-        System.out.println("Digite o número da conta:");
+        System.out.println("Digite o número ou o CPF da sua conta:");
+
+        if (!scanner.hasNextInt()) {
+            System.out.println("0 número da conta não pode conter letras ou outros caracteres!");
+            return;
+        }
+
         int numeroConta = scanner.nextInt();
         scanner.nextLine();
 
         Conta conta = contas.get(numeroConta);
+
         if (conta == null) {
             System.out.println("Conta não encontrada.");
             return;
