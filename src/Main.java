@@ -8,7 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Bem-vindo ao banco digital Arael Pictures!");
+            System.out.println("\nBem-vindo ao banco digital Arael Pictures!");
             System.out.println("1 - Abrir Conta");
             System.out.println("2 - Acessar Conta");
             System.out.println("0 - Sair");
